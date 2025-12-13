@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Clasamente · Victory Cup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="clasament.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">🏆</span>
+    <div>
+      <h1 id="pageTitle"></h1>
+      <p id="pageSubtitle">Victory Cup · Live</p>
+    </div>
+  </div>
+  <div id="lastUpdate" class="last-update">
+  Ultima actualizare: —
+</div>
+
+</header>
+
+<main class="container">
+
+  <!-- SWITCH – DOAR PE PAGINA PRINCIPALĂ -->
+  <section id="viewSwitch" class="view-switch hidden">
+    <button id="btnClubs" class="active">🏆 Cluburi</button>
+    <button id="btnAthletes">🥋 Sportivi</button>
+  </section>
+
+  <!-- PODIUM CLUBURI -->
+  <section id="podium" class="podium hidden"></section>
+
+  <!-- LISTĂ CLUBURI -->
+  <section id="clubList" class="club-list hidden"></section>
+
+  <!-- SEARCH -->
+  <section id="searchSection" class="search hidden">
+    <input id="searchInput" placeholder="Caută sportiv sau categorie…" />
+  </section>
+<section id="genderFilter" class="gender-filter hidden">
+  <button data-gender="all" class="active">Toți</button>
+  <button data-gender="masculin">Masculin</button>
+  <button data-gender="feminin">Feminin</button>
+</section>
+
+  <!-- GRID SPORTIVI -->
+  <section id="athletes" class="athlete-grid hidden"></section>
+
+</main>
+
+<footer class="footer">
+  Dashboard Victory Cup · creat cu ❤️ și ☕ de <strong>DevVision</strong>
+</footer>
+
+<script src="clasament.js"></script>
+</body>
+</html>

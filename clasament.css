@@ -1,0 +1,213 @@
+:root {
+  --bg:#0b1220;
+  --card:#0f172a;
+  --text:#e5e7eb;
+  --muted:#94a3b8;
+  --green:#22c55e;
+  --gold:#facc15;
+  --silver:#cbd5e1;
+  --bronze:#fb923c;
+}
+
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui;
+}
+
+/* HEADER */
+.topbar {
+  padding:20px 28px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.brand {
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+.logo { font-size:34px; }
+
+/* CONTAINER */
+.container {
+  padding:28px;
+  display:grid;
+  gap:24px;
+}
+
+/* SWITCH */
+.view-switch {
+  display:flex;
+  gap:8px;
+}
+
+.view-switch button {
+  padding:10px 18px;
+  border-radius:999px;
+  border:none;
+  background:#020617;
+  color:var(--muted);
+  cursor:pointer;
+  font-size:14px;
+}
+
+.view-switch button.active {
+  background:var(--green);
+  color:#052e16;
+  font-weight:800;
+}
+
+/* PODIUM */
+.podium {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.podium-card {
+  background:var(--card);
+  border-radius:22px;
+  padding:24px;
+  text-align:center;
+  cursor:pointer;
+}
+
+.place-1 { border:2px solid var(--gold); }
+.place-2 { border:2px solid var(--silver); }
+.place-3 { border:2px solid var(--bronze); }
+
+.score {
+  font-size:32px;
+  font-weight:900;
+  color:var(--green);
+}
+
+/* CLUB LIST */
+.club-list {
+  display:grid;
+  gap:12px;
+}
+
+.club-row {
+  background:var(--card);
+  border-radius:14px;
+  padding:14px 18px;
+  display:flex;
+  justify-content:space-between;
+  cursor:pointer;
+}
+
+/* SEARCH */
+.search input {
+  width:100%;
+  padding:14px 18px;
+  border-radius:14px;
+  border:none;
+  background:#020617;
+  color:white;
+  font-size:16px;
+}
+
+/* ATHLETES */
+.athlete-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:18px;
+}
+
+.athlete-card {
+  background:var(--card);
+  border-radius:18px;
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.athlete-header {
+  display:flex;
+  justify-content:space-between;
+}
+
+.total {
+  font-size:24px;
+  font-weight:900;
+  color:var(--green);
+}
+
+.result-line {
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.gold { color:var(--gold); }
+.silver { color:var(--silver); }
+.bronze { color:var(--bronze); }
+
+.hidden { display:none; }
+
+/* FOOTER */
+.footer {
+  text-align:center;
+  padding:18px;
+  font-size:12px;
+  color:var(--muted);
+}
+
+.athlete-club {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.gender-filter {
+  display: flex;
+  gap: 8px;
+}
+
+.gender-filter button {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: none;
+  background: #020617;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.gender-filter button.active {
+  background: #38bdf8;
+  color: #082f49;
+  font-weight: 700;
+}
+
+/* PODIUM SPORTIVI */
+.gold-card {
+  border: 2px solid #facc15;
+  box-shadow: 0 0 18px rgba(250,204,21,0.35);
+}
+
+.silver-card {
+  border: 2px solid #cbd5e1;
+  box-shadow: 0 0 16px rgba(203,213,225,0.3);
+}
+
+.bronze-card {
+  border: 2px solid #fb923c;
+  box-shadow: 0 0 14px rgba(251,146,60,0.35);
+}
+
+.default {
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.last-update {
+  font-size: 12px;
+  color: #9ca3af; /* gri elegant */
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+}

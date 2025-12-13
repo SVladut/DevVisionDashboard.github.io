@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karate Competition Dashboard 4.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="app-header">
+    <div class="brand">
+        <div class="brand-icon">DV</div>
+        <div class="brand-text">
+            <div class="brand-title">Victory Cup Live Dashboard</div>
+        </div>
+    </div>
+
+    <div class="header-right">
+        <div class="live-indicator">
+            <span class="dot"></span>
+            LIVE
+        </div>
+        <div id="currentTime" class="time-pill">--:--:--</div>
+        <button id="refreshBtn" class="btn btn-ghost">Reîmprospătează acum</button>
+    </div>
+</header>
+
+<main class="layout">
+    <!-- COL STÂNGA: TOTAL + CONTROALE + LEGENDĂ -->
+    <section class="column column-main">
+        <!-- TOTAL COMPETIȚIE -->
+        <section class="card card-total">
+            <header class="card-header">
+                <div>
+                    <h1>Progres competiție</h1>
+                    <p class="muted">
+                        Start la <strong>09:30</strong> · pauză de masă <strong>12:30–13:00</strong> (nu se contorizează).
+                    </p>
+                </div>
+                <div class="status-chip" id="globalStatusChip">
+                    <span class="status-dot neutral"></span>
+                    <span id="globalStatusLabel">Status necunoscut</span>
+                </div>
+            </header>
+
+            <div class="card-total-body">
+                <div class="total-main">
+                    <div class="total-percent" id="totalPercent">0%</div>
+                    <div class="progress progress-lg">
+                        <div class="progress-bar" id="totalBar"></div>
+                    </div>
+                    <p id="totalScheduleText" class="muted">
+                        Se calculează raportarea față de program...
+                    </p>
+                </div>
+
+                <div class="total-stats">
+                    <div class="stat-item">
+                        <div class="stat-label">Categorii printate</div>
+                        <div class="stat-value" id="totalPrinted">-</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Total categorii</div>
+                        <div class="stat-value" id="totalAll">-</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Progres teoretic acum</div>
+                        <div class="stat-value" id="totalTheoretical">-</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Final estimat competiție</div>
+                        <div class="stat-value" id="overallEta">-</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Diferență față de program</div>
+                        <div class="stat-value" id="overallEtaDiff">-</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Ultima actualizare</div>
+                        <div class="stat-value" id="lastUpdate">-</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTROALE -->
+        <section class="card card-controls">
+            <div class="controls-left">
+                <h2>Control actualizare</h2>
+            </div>
+            <div class="controls-right">
+                <label class="switch">
+                    <input type="checkbox" id="autoRefreshToggle" checked>
+                    <span class="slider"></span>
+                </label>
+                <span class="switch-label">Auto-refresh</span>
+
+                <label class="switch-label small" for="refreshInterval">
+                    Interval (sec):
+                </label>
+                <select id="refreshInterval" class="select">
+                    <option value="30">30</option>
+                    <option value="60" selected>60</option>
+                    <option value="120">120</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- LEGENDA -->
+        <section class="card card-legend">
+            <h2>Legendă status program</h2>
+            <ul class="legend-list">
+                <li>
+                    <span class="status-dot green"></span>
+                    <span>Înaintea programului</span>
+                </li>
+                <li>
+                    <span class="status-dot red"></span>
+                    <span>În întârziere față de program</span>
+                </li>
+                <li>
+                    <span class="status-dot yellow"></span>
+                    <span>Foarte aproape de program (± câteva minute)</span>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+    <!-- COL DREAPTA: TATAMI -->
+    <section class="column column-side">
+        <header class="section-header">
+            <div>
+                <h2>Progres pe tatami</h2>
+                <p class="muted small">
+                    Fiecare tatami este comparat separat cu programul planificat.
+                </p>
+            </div>
+            <div id="worstTatamiBadge" class="worst-badge hidden">
+                Cel mai mare risc: <span id="worstTatamiLabel">-</span>
+            </div>
+        </header>
+
+        <div id="tatamiContainer" class="tatami-list">
+            <div class="placeholder">
+                Se încarcă datele din API...
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="app-footer">
+    <span>
+        Dashboard Victory Cup creat cu multă <span class="heart">❤</span> și ☕ de <strong>DevVision</strong>
+    </span>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
