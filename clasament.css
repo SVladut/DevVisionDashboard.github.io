@@ -211,3 +211,57 @@ body {
   margin-top: 4px;
   letter-spacing: 0.04em;
 }
+
+/* Stil general pentru ambele butoane de export */
+.export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #2b6cb0, #3182ce);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover */
+.export-btn:hover {
+  background: linear-gradient(135deg, #2c5282, #2b6cb0);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Click efect */
+.export-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Stil secundar (ex: Export Sportivi) */
+.export-btn.secondary {
+  background: linear-gradient(135deg, #718096, #4a5568);
+}
+
+.export-btn.secondary:hover {
+  background: linear-gradient(135deg, #4a5568, #2d3748);
+}
+
+/* Ascuns inițial */
+.hidden {
+  display: none !important;
+}
+
+/* Pentru ecrane mici */
+@media (max-width: 600px) {
+  .export-btn {
+    font-size: 14px;
+    padding: 8px 14px;
+    gap: 6px;
+  }
+}

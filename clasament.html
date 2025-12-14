@@ -5,6 +5,7 @@
   <title>Clasamente · Victory Cup</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="clasament.css">
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 </head>
 <body>
 
@@ -16,10 +17,17 @@
       <p id="pageSubtitle">Victory Cup · Live</p>
     </div>
   </div>
-  <div id="lastUpdate" class="last-update">
-  Ultima actualizare: —
-</div>
 
+  <div class="header-actions">
+    <div id="lastUpdate" class="last-update">
+      Ultima actualizare: —
+
+    </div>      <!-- Buton general, pentru toate cluburile -->
+<button id="exportExcelBtn" class="export-btn primary hidden">📈 Export Rezultate Toate Cluburile</button>
+
+<!-- Buton individual, doar pentru pagina de club -->
+<button id="exportAthletesBtn" class="export-btn secondary hidden">📊 Export Rezultate Sportivi</button>
+</div>
 </header>
 
 <main class="container">
@@ -40,11 +48,12 @@
   <section id="searchSection" class="search hidden">
     <input id="searchInput" placeholder="Caută sportiv sau categorie…" />
   </section>
-<section id="genderFilter" class="gender-filter hidden">
-  <button data-gender="all" class="active">Toți</button>
-  <button data-gender="masculin">Masculin</button>
-  <button data-gender="feminin">Feminin</button>
-</section>
+
+  <section id="genderFilter" class="gender-filter hidden">
+    <button data-gender="all" class="active">Toți</button>
+    <button data-gender="masculin">Masculin</button>
+    <button data-gender="feminin">Feminin</button>
+  </section>
 
   <!-- GRID SPORTIVI -->
   <section id="athletes" class="athlete-grid hidden"></section>
@@ -55,6 +64,12 @@
   Dashboard Victory Cup · creat cu ❤️ și ☕ de <strong>DevVision</strong>
 </footer>
 
+<!-- Librăria Excel -->
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+<!-- Script principal -->
 <script src="clasament.js"></script>
+
+
 </body>
 </html>

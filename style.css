@@ -581,3 +581,45 @@ h2 {
     color: #ef4444;
     margin: 0 2px;
 }
+
+
+
+
+/* === Buton "Clasament Live" === */
+.btn-link {
+  background: linear-gradient(135deg, #2b6cb0, #3182ce);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+}
+
+/* Hover efect */
+.btn-link:hover {
+  background: linear-gradient(135deg, #2c5282, #2b6cb0);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Click efect */
+.btn-link:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Adaptare pe mobil */
+@media (max-width: 600px) {
+  .btn-link {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
